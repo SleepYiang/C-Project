@@ -34,18 +34,20 @@ int maxMeetings(std::vector<Meeting> &meetings)
 int main()
 {
     std::vector<Meeting> meetings={
-    {1,4},
-    {3,6},
-    {9,0},
-    {4,6},
-    {5,7},
-    {8,12},
-    {8,11},
-    {12,14},
-    {18,22},
-    {10,14}
+        {1,4},
+        {3,6},
+        {9,0},
+        {4,6},
+        {5,7},
+        {8,12},
+        {8,11},
+        {12,14},
+        {18,22},
+        {10,14}
     };
     int result=maxMeetings(meetings);
     std::cout<<"会议的最大安排数量"<<result<<std::endl;
     return 0;
 }
+
+//shuiyitiao
