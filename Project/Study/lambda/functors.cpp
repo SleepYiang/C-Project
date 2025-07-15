@@ -35,6 +35,16 @@ struct IsGreaterThan
         return x>threshold;
     }
 };
+
+//仿函数与模板
+template<typename T>
+struct Compare
+{
+    bool operator()(const T&a,const T&b)
+    {
+        return a<b;
+    }
+};
 int main()
 {
     //基本仿函数
@@ -63,5 +73,17 @@ int main()
     {
         std::cout<<"没有找到大于10的数"<<std::endl;
     }
+
+    std::cout<<"*********************"<<std::endl;
+
+    std::vector<int> number = {5, 2, 8, 1, 9};
+    // 使用仿函数进行排序
+    std::sort(number.begin(), number.end(), Compare<int>());
+
+    std::cout << "排序后的数字: ";
+    for(auto num : number) {
+        std::cout << num << " "; // 输出: 1 2 5 8 9
+    }
+    std::cout << std::endl;
     return 0;
 }
